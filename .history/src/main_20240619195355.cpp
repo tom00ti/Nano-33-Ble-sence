@@ -25,9 +25,61 @@ void setup() {
 
 void loop() {
   // put your main code here, to run repeatedly:
+//   float GyroX,GyroY,GyroZ;
+//   float AccX,AccY,AccZ;
+//   float MagX,MagY,MagZ;
 
+//   if(IMU.gyroscopeAvailable())
+//   {
+//     IMU.readGyroscope(GyroX,GyroY,GyroZ);
+    
+// /*  //serial print
+//     Serial.print(GyroX);
+//     Serial.print('\t');
+//     Serial.print(GyroY);
+//     Serial.print('\t');
+//     Serial.println(GyroZ);
+//  */
+
+//     // for teleplot setting
+//     Serial.print(">GyroX:");
+//     Serial.println(GyroX);
+//     Serial.print(">GyroY:");
+//     Serial.println(GyroY);
+//     Serial.print(">GyroZ:");
+//     Serial.println(GyroZ);
+
+//   if (IMU.accelerationAvailable()) {
+//     IMU.readAcceleration(AccX, AccY, AccZ);
+
+//     Serial.print(">AccX:");
+//     Serial.println(AccX);
+//     Serial.print(">AccY:");
+//     Serial.println(AccY);
+//     Serial.print(">AccZ:");
+//     Serial.println(AccZ);
+//   }
+  
+//   if (IMU.magneticFieldAvailable()) {
+//     IMU.readMagneticField(MagX, MagY, MagZ);
+
+//     Serial.print(">MagX:");
+//     Serial.println(MagX);
+//     Serial.print(">MagY:");
+//     Serial.println(MagY);
+//     Serial.print(">MagZ:");
+//     Serial.println(MagZ);
+//   }
+
+//   // digitalWrite(LED_BUILTIN,HIGH);
+//   // delay(100);
+//   // digitalWrite(LED_BUILTIN,LOW);
+//   // delay(100);
+
+//   }
   LSM9DS1Get();
   blink();
+
 
 }
 
@@ -135,6 +187,11 @@ void LSM9DS1Get(){
     Serial.print(">MagZ:");
     Serial.println(MagZ);
   }
+
+  // digitalWrite(LED_BUILTIN,HIGH);
+  // delay(100);
+  // digitalWrite(LED_BUILTIN,LOW);
+  // delay(100);
 
   }
 

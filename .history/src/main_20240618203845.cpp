@@ -4,55 +4,15 @@
 
 // put function declarations here:
 int myFunction(int, int);
-void LSM9DS1Init();
-void LSM9DS1Get();
-void blinkInit();
-void blink();
-
 
 void setup() {
   // put your setup code here, to run once:
-
   int result = myFunction(2, 3);
 
-  // blink test
-  blinkInit();
+// blink test
+  pinMode(LED_BUILTIN,OUTPUT);
 
-  // LSM9DS1 Init
-  LSM9DS1Init();
-  
-}
-
-void loop() {
-  // put your main code here, to run repeatedly:
-
-  LSM9DS1Get();
-  blink();
-
-}
-
-// put function definitions here:
-int myFunction(int x, int y) {
-  return x + y;
-}
-
-
-void blinkInit(){
-   pinMode(LED_BUILTIN,OUTPUT);
-}
-
-void blink(){
-
-  digitalWrite(LED_BUILTIN,HIGH);
-  delay(100);
-  digitalWrite(LED_BUILTIN,LOW);
-  delay(100);
-
-}
-
-
-void LSM9DS1Init(){
-  //Serial setting  
+//Serial setting  
   Serial.begin(9600);
   while (!Serial);
   Serial.println("Started");
@@ -85,11 +45,11 @@ void LSM9DS1Init(){
   Serial.println();
   Serial.println("Magnetic Field in uT");
   Serial.println("MagX\tMagY\tMagZ");
-
+  
 }
 
-void LSM9DS1Get(){
-
+void loop() {
+  // put your main code here, to run repeatedly:
   float GyroX,GyroY,GyroZ;
   float AccX,AccY,AccZ;
   float MagX,MagY,MagZ;
@@ -135,8 +95,16 @@ void LSM9DS1Get(){
     Serial.print(">MagZ:");
     Serial.println(MagZ);
   }
+  digitalWrite(LED_BUILTIN,HIGH);
+  delay(100);
+  digitalWrite(LED_BUILTIN,LOW);
+  delay(100);
 
   }
 
+}
 
+// put function definitions here:
+int myFunction(int x, int y) {
+  return x + y;
 }
