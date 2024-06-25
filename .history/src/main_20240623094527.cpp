@@ -73,7 +73,7 @@ void APDS9960Get(){
   Serial.println(b);
   Serial.println();
 
-//  delay(1000);
+  delay(1000);
 
 }
 

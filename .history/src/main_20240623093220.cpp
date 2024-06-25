@@ -8,8 +8,6 @@ void LSM9DS1Init();
 void LSM9DS1Get();
 void blinkInit();
 void blink();
-void APDS9960Init();
-void APDS9960Get();
 
 
 void setup() {
@@ -23,16 +21,12 @@ void setup() {
   // LSM9DS1 Init
   LSM9DS1Init();
   
-  APDS9960Init();
-
-
 }
 
 void loop() {
   // put your main code here, to run repeatedly:
 
   LSM9DS1Get();
-  APDS9960Get();
   blink();
 
 }
@@ -42,40 +36,6 @@ int myFunction(int x, int y) {
   return x + y;
 }
 
-void APDS9960Init(){
-
-  Serial.begin(9600);
-  while (!Serial);
-
-  if (!APDS.begin()) {
-    Serial.println("Error initializing APDS-9960 sensor.");
-  }
-
-}
-
-void APDS9960Get(){
-  
-  // check if a color reading is available
-  while (! APDS.colorAvailable()) {
-    delay(5);
-  }
-  int r, g, b;
-
-  // read the color
-  APDS.readColor(r, g, b);
-
-  // print the values
-  Serial.print("r = ");
-  Serial.println(r);
-  Serial.print("g = ");
-  Serial.println(g);
-  Serial.print("b = ");
-  Serial.println(b);
-  Serial.println();
-
-//  delay(1000);
-
-}
 
 
 void blinkInit(){
